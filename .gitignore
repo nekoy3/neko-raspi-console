@@ -16,3 +16,5 @@ backups/
 *.tgz
 preview.html
 static/preview.js
+
+.venv*/

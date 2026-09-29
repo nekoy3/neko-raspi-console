@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+# Exact public JavaScript export identifiers in xterm.js 6.0.0, not API keys.
+# Both the path AND exact matched value must agree; never ignore the vendor tree.
+[[allowlists]]
+description = "Two verified xterm.js export identifiers"
+condition = "AND"
+paths = ['''^(static/)?vendor/xterm\.js$''']
+regexTarget = "secret"
+regexes = ['''^t\.(TwoKeyMap=void|Sequencer=t\.Throttler=void)$''']
