@@ -1,0 +1,13 @@
+[Unit]
+Description=Neko USB serial console WebGUI
+[Service]
+Type=simple
+EnvironmentFile=-%h/console-server/data/deployment.env
+WorkingDirectory=%h/console-server
+ExecStart=%h/console-server/.venv/bin/python %h/console-server/server.py
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=yes
+[Install]
+WantedBy=default.target
